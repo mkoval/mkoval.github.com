@@ -1,7 +1,12 @@
+html, body {
+	margin:  0;
+	padding: 0;
+}
+
 /* Header */
 div#header {
 	background: #000;
-	color:      #FFF;
+	color:      #CCC;
 }
 
 div#header h1 {
