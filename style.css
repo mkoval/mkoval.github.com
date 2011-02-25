@@ -35,7 +35,7 @@ div#header h1 {
 }
 
 div#header h1 a {
-	color:           inherit;
+	color:           #FFF;
 	text-decoration: none;
 }
 
@@ -57,7 +57,7 @@ div#header ul#nav li {
 }
 
 div#header ul#nav li a {
-	color:           inherit;
+	color:           #FFF;
 	font-family:     sans-serif;
 	text-decoration: none;
 	padding:         0.2em;
