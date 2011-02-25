@@ -1,6 +1,7 @@
 html, body {
 	margin:          0;
 	padding:         0;
+	background:      #000;
 	font-family:     'Puritan', arial, sans-serif;
 }
 
@@ -37,7 +38,7 @@ div#header {
 
 div#header h1 {
 	position:        absolute;
-	bottom:          -0.25em;
+	bottom:          -0.65em;
 	left:            0.50em;
 	padding:         0;
 	margin:          0;
@@ -52,7 +53,7 @@ div#header h1 a {
 
 div#header ul#nav {
 	position:        absolute;
-	bottom:          0.2em;
+	bottom:          -0.62em;
 	right:           1em;
 	margin:          0;
 	padding:         0;
@@ -82,11 +83,19 @@ div#header ul#nav li a:hover {
 /* Content */
 div#content {
 	padding:         0.5em;
+	background:      #FFF;
 }
 
 /* Footer */
 div#footer {
+	color:           #FFF;
 	border-top:      1px solid #666;
 	font-size:       0.9em;
 	text-align:      center;
+	padding-top:     1em;
+}
+
+div#footer a {
+	color:           #FFF;
+	border-bottom-color: #FFF;
 }
