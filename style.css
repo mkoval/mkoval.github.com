@@ -1,4 +1,9 @@
 /* Header */
+div#header {
+	background: #000;
+	color:      #FFF;
+}
+
 div#header h1 {
 	color:       #333;
 	font-family: sans-serif;
