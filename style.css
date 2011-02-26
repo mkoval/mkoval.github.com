@@ -30,7 +30,9 @@ p {
 div#header {
 	color:           #FFF;
 	background:      #000;
+	width:           700px;
 	height:          3em;
+	margin:          0 auto;
 	padding:         0.5em 1em 0 1em;
 	margin:          0 0 0.75em 0;
 	position:        relative;
@@ -65,7 +67,7 @@ div#header ul#nav li {
 	padding-top:     0.73em;
 	margin:          0 0.4em;
 	float:           left;
-	list-style-none: none;
+	list-style-type: none;
 }
 
 div#header ul#nav li a {
@@ -85,17 +87,37 @@ div#content {
 	padding:         0.5em;
 	background:      #FFF;
 }
+div#container {
+	width:           700px;
+}
 
 /* Footer */
 div#footer {
+	width:           770px;
 	color:           #FFF;
 	border-top:      1px solid #666;
 	font-size:       0.9em;
 	text-align:      center;
-	padding-top:     1em;
+	padding:         1em 0;
 }
 
 div#footer a {
 	color:           #FFF;
 	border-bottom-color: #FFF;
+}
+
+/* Gallery of Accounts */
+ul.accounts {
+	display:          block;
+	margin:           0 auto;
+}
+
+ul.accounts li {
+	display:          inline;
+	margin:           0 0.5em;
+	list-style-type:  none;
+}
+
+ul.accounts li a {
+	border:           none;
 }
