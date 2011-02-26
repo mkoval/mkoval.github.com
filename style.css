@@ -121,3 +121,7 @@ ul.accounts li {
 ul.accounts li a {
 	border:           none;
 }
+
+ul.accounts li a img {
+	border:           none;
+}
