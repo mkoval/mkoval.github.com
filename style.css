@@ -1,12 +1,12 @@
 html, body {
 	margin:          0;
 	padding:         0;
-	background:      #333;
+	background:      #BDD1C8;
 	font-family:     'Puritan', arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color:           #333;
+	color:           #2E3A34;
 	font-family:     arial, sans-serif;
 	margin:          0 0 0.25em 0;
 	padding:         0;
@@ -27,18 +27,17 @@ p {
 
 /* Header */
 div#header {
-	color:           #FFF;
-	width:           700px;
 	height:          3em;
 	margin:          0 auto;
 	padding:         0.5em 1em 0 1em;
-	margin:          0 0 0.75em 0;
 	position:        relative;
+	background:      #2E3A34;
 }
 
 div#header h1 {
+	width:           700px;
 	position:        absolute;
-	bottom:          -0.65em;
+	bottom:          -0.3em;
 	left:            0.50em;
 	padding:         0;
 	margin:          0;
@@ -53,8 +52,8 @@ div#header h1 a {
 
 div#header ul#nav {
 	position:        absolute;
-	bottom:          -0.62em;
-	right:           1em;
+	bottom:          0.2em;
+	left:            28em;
 	margin:          0;
 	padding:         0;
 	cursor:          default;
@@ -77,7 +76,7 @@ div#header ul#nav li a {
 }
 
 div#header ul#nav li a:hover {
-	border-bottom:   0.3em solid #000;
+	border-bottom:   0.3em solid #2E3A34;
 }
 
 /* Content */
@@ -92,15 +91,12 @@ div#container {
 /* Footer */
 div#footer {
 	width:           770px;
-	color:           #FFF;
-	border-top:      1px solid #666;
 	font-size:       0.9em;
 	text-align:      center;
 	padding:         1em 0;
 }
 
 div#footer a {
-	color:           #FFF;
 	border-bottom-color: #FFF;
 }
 
