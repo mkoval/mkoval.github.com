@@ -1,6 +1,7 @@
 html, body {
 	margin:          0;
 	padding:         0;
+	color:           #000;
 	background:      #BDD1C8;
 	font-family:     'Puritan', arial, sans-serif;
 }
@@ -98,6 +99,36 @@ div#footer {
 
 div#footer a {
 	border-bottom-color: #FFF;
+}
+
+/* Figures */
+div.photos {
+	display:         table;
+	text-align:      center;
+	margin:          0 auto;
+}
+div.photos div.figure {
+	display:         table-cell;
+	width:           250px;
+	padding:         0 1em;
+}
+div.photos div.figure img {
+	width:           100%;
+	border:          2px solid #2E3A34;
+}
+div.photos div.figure span {
+	display:         block;
+	text-align:      center;
+}
+
+/* Gallery of Photos */
+div.photos {
+	text-align:       center;
+}
+div.photos img {
+	width:            45%;
+	border:           2px solid #000;
+	vertical-align:   middle;
 }
 
 /* Gallery of Accounts */
