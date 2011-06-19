@@ -158,17 +158,21 @@ ul.projects {
 	margin:  0;
 }
 ul.projects li {
-	list-style-type: none;
-	height:          129px;
-	padding-left:    139px;
-	margin:          1em 0;
+	list-style-type:     none;
+	padding-left:        139px;
+	margin:              1em 0;
+	background-repeat:   no-repeat;
+	background-position: center left;
 }
 .project-igvc {
-	background:      url(/images/logo-igvc.jpg) top left no-repeat;
+	background-image: url(/images/logo-igvc.jpg);
+}
+.project-quadrotor {
+	background-image: url(/images/logo-quadrotor.jpg);
 }
 .project-netbots {
-	background:      url(/images/logo-netbots.png) top left no-repeat;
+	background-image: url(/images/logo-netbots.png);
 }
 .project-hax {
-	background:      url(/images/logo-hax.jpg) top left no-repeat;
+	background-image: url(/images/logo-hax.jpg);
 }
