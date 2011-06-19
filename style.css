@@ -150,3 +150,24 @@ ul.accounts li a {
 ul.accounts li a img {
 	border:           none;
 }
+
+/* Project Logos */
+ul.projects {
+	padding: 0;
+	margin:  0;
+}
+ul.projects li {
+	list-style-type: none;
+	height:          129px;
+	padding-left:    139px;
+	margin:          1em 0;
+}
+.project-igvc {
+	background:      url(/images/logo-igvc.jpg) top left no-repeat;
+}
+.project-netbots {
+	background:      url(/images/logo-netbots.png) top left no-repeat;
+}
+.project-hax {
+	background:      url(/images/logo-hax.jpg) top left no-repeat;
+}
