@@ -3,4 +3,105 @@ layout: default
 title: IGVC - Projects - Michael Koval
 ---
 
-<p>Nothing here, yet...</p>
+<h2>Rutgers Navigator, 2011 IGVC</h2>
+<p>The <em>Navigator</em> is a three-wheeled, differential-drive robotics
+research platform that was designed, built, and programmed entirely by the
+Rutgers University <a href="http://ieee.rutgers.edu">IEEE Student Branch</a>
+for competing in the 2011 <a href="http://www.igvc.org">Intelligent Ground
+Vehicle Competition</a>. I was responsible for designing the Navigator's camera
+system and writing the computer vision software necessary for processing its
+output.</p>
+
+<div class="photos" style="margin:1.5em 0;">
+	<div class="figure" style="width:320px;">
+		<img src="/images/projects/igvc/navi_cad.png" alt="CAD render of the Navigator" width="318"/>
+		<span>Textured CAD Render of the Navigator</span>
+	</div>
+	<div class="figure" style="width:320px;">
+		<img src="/images/projects/igvc/navi_pic.jpg" alt="photo of the Navigator" width="318"/>
+		<span>Photo of the Navigator</span>
+	</div>
+</div>
+
+<p>All of the content on this page is discussed in more depth in our official
+2011 IGVC Design Report or my capstone design final report:</p>
+<ul>
+	<li><a href="/downloads/projects/igvc/igvc_design.pdf"><em>Navigator</em> Design Report: 2011 IGVC</a> by Adam Stambler, Michael Koval, and Peter Vasilnak</li>
+	<li><a href="/downloads/projects/igvc/igvc_capstone.pdf">Vision-Based Autonomous Ground Vehicle Navigation</a> by Michael Koval</li>
+</ul>
+
+<h2>Camera System</h2>
+
+<img src="/images/projects/igvc/cameras.jpg" alt="stereo and wheel cameras superimposed over a ghost CAD render of the Navigator" width="240" height="209" style="float:right;"/>
+
+<p>There are a total of five <a
+href="http://en.wikipedia.org/wiki/PlayStation_Eye">PlayStation Eye</a> cameras
+mounted in custom polycarbonate cases and attached to the Navigator's aluminum
+frame.  Originally intended as a peripheral for the PlayStation 3 game console,
+these cameras can be used as inexpensive USB web-cameras with a
+disproportionate number of high-end features:</p>
+
+<ul>
+	<li>Video4Linux Kernel Support</li>
+	<li>High Framerate (640 &times; 320 @ 60 Hz, 320 &times; 280 @ 120 Hz)</li>
+	<li>Wide-Angle Lens (75&deg; HFOV)</li>
+	<li>Hardware Synchronization (with modifications)</li>
+	<li>Uncompressed Video.</li>
+</ul>
+
+<p>Three of these cameras form a custom trinocular vision system that is
+mounted to the front of the Navigator. All three of these cameras are
+hardware-synchronized to share the same clock, which enables accurate stereo
+reconstruction while moving at high speeds. Synchronized frames from these
+cameras are captured at 15 Hz with a resolution of 640 &times; 480 and all
+compression disabled. The remaining two cameras are mounted above the robot's
+front two wheels, asynchronously capture images at 15 Hz, and use a lower
+resolution of 320 &times; 240. Despite their proximity to the ground, these
+five cameras have a composite field of view of nearly 170&deg;.</p>
+
+<h2>Stereo Obstacle Detection</h2>
+<p>Selecting the optimal baseline for a stereo system is a balance of two
+opposing, but equally important, factors: field of view and maximum range.
+Decreasing the baseline increases the shared field of view of the two cameras
+at the cost of a shorter maximum range. Conversely, increasing the baseline
+decreases the aggregate field of view, but yields an increased maximum range
+and better precision at each visible distance. Using a trinocular stereo system
+instead of a standard binocular system allows the software to get the
+advantages of two baselines with the addition of only one camera.</p>
+
+<div class="photos" style="margin:1.5em 0;">
+	<div class="figure">
+		<img src="/images/projects/igvc/stereo_rgb.jpg" alt="original color image" width="200" height="150"/>
+		<span>Source Image</span>
+	</div>
+	<div class="figure">
+		<img src="/images/projects/igvc/stereo_narrow.jpg" alt="narrow baseline disparity map" width="200" height="150"/>
+		<span>Narrow Disparity Map</span>
+	</div>
+	<div class="figure">
+		<img src="/images/projects/igvc/stereo_wide.jpg" alt="narrow baseline disparity map" width="200" height="150"/>
+		<span>Wide Disparity Map</span>
+	</div>
+</div>
+
+<p>The narrow pair has a baseline of approximately 10 cm and uses the left and
+middle cameras. Conversely, the wide pair has a baseline of approximately 20 cm
+and uses the left and right cameras. By using the narrow baselines for nearby
+points and the wide baseline for more distance points, this trinocular stereo
+system combines the small minimum range of the narrow baseline with the better
+accuracy and maximum range of the wide baseline. Practically, this is
+implemented by calibrating the two baselines independently and processing the
+two stereo pairs in parallel.</p>
+
+<p>Once images from both baselines are processed for point correspondences, the
+resulting pointclouds are merged. By assuming that ground is the dominant plane
+in the composite point cloud, the navigator fits a planar model to the data
+using RANSAC. This model is smoothed by a low-pass filter and is subject to
+several heuristics that verify that the plane was incorrectly fit to a planar
+obstacle. Points that are sufficiently far from the fitted ground plane are
+passed through a statistical outlier detection filter and are assumed to be
+obstacles.</p>
+
+<h2>Lane Tracking</h2>
+<p>Coming soon...</p>
+
