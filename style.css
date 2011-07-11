@@ -166,6 +166,7 @@ ul.projects li {
 }
 .project-igvc {
 	background-image: url(/images/projects/logo-igvc.jpg);
+	background-position: bottom left;
 }
 .project-quadrotor {
 	background-image: url(/images/projects/logo-quadrotor.jpg);

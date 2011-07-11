@@ -103,5 +103,38 @@ passed through a statistical outlier detection filter and are assumed to be
 obstacles.</p>
 
 <h2>Lane Tracking</h2>
-<p>Coming soon...</p>
+<p>Not only must the Navigator see road obstacles, it must also be capable of
+detecting the white painted lines that deﬁne the edges of the Autonomous
+Challenge obstacle course. Analysis of the 2010 IGVC results sho that accurate
+line detection is crucial to performing well: a mere 2 of 28 teams lasted the
+full duration of the Autonomous Challenge without being disqualified. To avoid
+suffering the same fate, the Navigator simultaneously searches for lines in
+images from three cameras: the front-mounted stereo camera, the left wheel
+camera, and the right wheel camera. By running the entire processing pipeline
+at 10-15 Hz, the Navigator is able to detect lines within in a 180&deg; ﬁeld of
+view with less than 100 ms of latency</p>
 
+<div class="photos" style="margin:1.5em 0;">
+	<div class="figure">
+		<img src="/images/projects/igvc/line_rgb.jpg" alt="original color image" width="200" height="150"/>
+		<span>Source Image</span>
+	</div>
+	<div class="figure">
+		<img src="/images/projects/igvc/line_pulse.jpg" alt="matched pulse-width filter response" width="200" height="150"/>
+		<span>Pulse-Width Filter Response</span>
+	</div>
+	<div class="figure">
+		<img src="/images/projects/igvc/line_nonmax.jpg" alt="output of non-maximal supression" width="200" height="150"/>
+		<span>Non-Maximal Suppression</span>
+	</div>
+</div>
+
+<p>Lines in each of the three images are independently identified using a
+three-stage algorithm. Immediately upon receiving a new frame from the camera,
+the original color image undergoes a color space transformation that emphasizes
+white regions of the image. The resulting monochromatic image is then searched
+for regions of high intensity that match the expected width of the line using a
+matched pulse-width filter. The output of the matched pulse-width filter is
+reduced to a set of candidate line points through non-maximal suppression and
+the local maxima from all three images are projected onto the ground plane in a
+common coordinate frame.</p>
