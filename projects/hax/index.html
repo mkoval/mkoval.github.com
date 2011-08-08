@@ -3,4 +3,37 @@ layout: default
 title: HAX - Projects - Michael Koval
 ---
 
-<p>Nothing here, yet...</p>
+<h2>Hardware Abstraction for Vex</h2>
+
+<img src="/images/projects/logo-hax.jpg" alt="Vex Robotics Competition"
+     width="129" height="78" style="float:right;margin:0.5em;"/>
+
+<p>Heading into the 2010 Vex Robotics Competition season, our team heard some
+great news: we were being issued a pre-release beta of the Vex Cortex
+Microcontroller based on the the ARM Cortex processor, Compared to the original
+Vex Microcontroller V0.5, which was based on a PIC18 processor, the new
+microcontroller was blazing fast and used an architecture that has a
+full-featured open-soruce toolchain. Unfortunately, the new microcontroller
+would not be available a scant few months before the World Championship.</p>
+
+<p>This was a daunting problem. With the new microcontroller arriving so late
+it was very unlikely that we would have time to port and test our competition
+code to the new architecture. Instead, we decided to design a hardware
+abstraction layer that serves as a layer of indirection between the high-level
+user-code and low-level hardware access. As long as our programs only
+interacted with the hardware through this abstraction layer, the same code
+could be easily modified to run on both platforms.</p>
+
+<p>
+
+<div style="text-align:center;margin:1.5em 0;">
+	<img src="/images/projects/vex/award2010.jpg" style="display:block;margin:0 auto;width:500px;height:375px;"
+		  alt="Accepting the 2010 Vex Robotics World Championship Innovate Award"/>
+	<span>Accepting the 2010 Innovate Award for HAX</span>
+</div>
+
+<p>Following the lessons learned from this first attempt at a easy-to-use C
+programming layer for Vex mircocontrollers, the programming team refined the
+design over the summer, leading to the new and improved HAX. The team plans to
+use this updated version of HAX in the 2010 VEX World Championships, as well
+any other other competitions on the way to Dallas.</p>

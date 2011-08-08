@@ -3,4 +3,60 @@ layout: default
 title: NetBots - Projects - Michael Koval
 ---
 
-<p>Nothing here, yet...</p>
+<h2>NetBots Swarm Robotics Target Recognition Algorithm</h2>
+
+<div class="link">Research Assistant in the 2009 <acronym title="Advances in
+Machine Learning in Theory &amp; Applications">AMALTHEA</acronym> <acronym
+title="Research Experience for Undergraduates">REU</acronym> hosted at <acronym
+title="University of Central Florida">UCF</acronym></div>
+
+<p>NetBots is a novel <a
+href="http://en.wikipedia.org/wiki/Swarm_robotics">swarm robotics</a> algorithm
+to improve detection accuracy in the distributed <a
+href="http://en.wikipedia.org/wiki/Automatic_target_recognition">automatic
+target recognition</a> (<acronym title="Automatic Target
+Recognition">ATR</acronym>) problems. Prior works (Dasgupta <em>et al.</em> and
+Martinoli <em>et al.</em>) have applied swarm robotics to the ATR problem by
+having a large number of cheap, inaccurate robots "vote" on whether a given
+object is a target.</p>
+
+<p>These prior works, however, assume that the host of inexpensive robots is
+homogeneous in detection accuracy (i.e. all robots have the same probability of
+misidentifying a target). This is an inaccurate assumption: inexpensive
+production techniques are error-prone and produce robots of widely varying
+accuracy. The NetBots algorithm uses a decentralized social network of robot
+interactions to approximate each robots' individual accuracy. With this
+additional information, the robots' votes can be weighted to give more accurate
+robots greater influence when classifying a potential target.</p>
+
+<p>Both the NetBots and the HelpBots (the naïve control algorithm) were
+simulated in the open-source <a
+href="http://playerstage.sourceforge.net/">Stage</a> simulator using custom C++
+robot controllers. Initial results show a significant decrease in the number of
+errors experienced by the NetBots algorithm when compared to the control
+HelpBots algorithm. This research was submitted to the <acronym
+title="Institute of Electrical and Electronics Engineers">IEEE</acronym>
+<acronym title="International Conference on Robotics and
+Automation">ICRA</acronym>-2010 conference and is pending review. More recent
+advancements in the NetBots algorithm are currently being tested and the
+results will be submitted to the <acronym title="Innovative Applications of
+Artificial Intelligence Conference">IAAI</acronym>-2010 conference.</p>
+
+<p>The following deliverables were produced as part of the 2009 <acronym
+title="Advances in Machine Learning in Theory &amp;
+Applications">AMALTHEA</acronym> <acronym title="Research Experience for
+Undergraduates">REU</acronym> program:</p>
+<ul>
+	<li><a href="amalthea_report.pdf">Technical Report</a> (PDF)</li>
+	<li><a href="amalthea_poster.png">Project Poster</a> (PNG)</li>
+	<li><a href="amalthea_ppt.pptx">PowerPoint Presentation</a> (PPT)</li>
+</ul>
+<p style="font-style:italic;">This work was supported in part by the <acronym
+title="National Science Foundation">NSF</acronym> Grants: 0341601, 0647018,
+0717674, 0717680, 0647120, 0525429, 0806931, 0837332.</p>
+
+<h2>Publications</h2>
+<ul>
+	<li>Michael C. Koval, Adina E. S. Rubinoff, Mahsa Maghami, Michael Georgiopoulos. "Social Network Analysis for Target Recognition in Swarm Robotics. AMALTHEA Technical Report. (<a href="amalthea_report.pdf">PDF</a>)</li>
+</ul>
+

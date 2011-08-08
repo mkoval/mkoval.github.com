@@ -112,11 +112,11 @@ div.photos div.figure {
 	width:           250px;
 	padding:         0 1em;
 }
-div.photos div.figure img {
+div.figure img {
 	width:           100%;
 	border:          2px solid #2E3A34;
 }
-div.photos div.figure span {
+div.figure span {
 	display:         block;
 	text-align:      center;
 }
