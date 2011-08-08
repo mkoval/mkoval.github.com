@@ -1,0 +1,20 @@
+/* Gallery of Accounts */
+ul.accounts {
+	display:          block;
+	margin:           0 auto;
+	padding:          0;
+}
+
+ul.accounts li {
+	display:          inline;
+	margin:           0 0.75em;
+	list-style-type:  none;
+}
+
+ul.accounts li a {
+	border:           none;
+}
+
+ul.accounts li a img {
+	border:           none;
+}

@@ -1,0 +1,24 @@
+/* Project Logos */
+ul.projects {
+	padding: 0;
+	margin:  0;
+}
+ul.projects li {
+	list-style-type:     none;
+	padding-left:        139px;
+	margin:              1em 0;
+	background-repeat:   no-repeat;
+	background-position: center left;
+}
+.project-igvc {
+	background-image: url(/projects/images/logo-igvc.jpg);
+}
+.project-quadrotor {
+	background-image: url(/projects/images/logo-quadrotor.jpg);
+}
+.project-netbots {
+	background-image: url(/projects/images/logo-netbots.png);
+}
+.project-hax {
+	background-image: url(/projects/images/logo-hax.jpg);
+}

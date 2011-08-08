@@ -105,7 +105,8 @@ div#footer a {
 div.photos {
 	display:         table;
 	text-align:      center;
-	margin:          0 auto;
+	margin:          1em auto;
+	padding-right:   1em;
 }
 div.photos div.figure {
 	display:         table-cell;
@@ -113,66 +114,9 @@ div.photos div.figure {
 	padding:         0 1em;
 }
 div.figure img {
-	width:           100%;
 	border:          2px solid #2E3A34;
 }
 div.figure span {
 	display:         block;
 	text-align:      center;
-}
-
-/* Gallery of Photos */
-div.photos {
-	text-align:       center;
-}
-div.photos img {
-	width:            45%;
-	border:           2px solid #000;
-	vertical-align:   middle;
-}
-
-/* Gallery of Accounts */
-ul.accounts {
-	display:          block;
-	margin:           0 auto;
-	padding:          0;
-}
-
-ul.accounts li {
-	display:          inline;
-	margin:           0 0.75em;
-	list-style-type:  none;
-}
-
-ul.accounts li a {
-	border:           none;
-}
-
-ul.accounts li a img {
-	border:           none;
-}
-
-/* Project Logos */
-ul.projects {
-	padding: 0;
-	margin:  0;
-}
-ul.projects li {
-	list-style-type:     none;
-	padding-left:        139px;
-	margin:              1em 0;
-	background-repeat:   no-repeat;
-	background-position: center left;
-}
-.project-igvc {
-	background-image: url(/projects/images/logo-igvc.jpg);
-}
-.project-quadrotor {
-	background-image: url(/projects/images/logo-quadrotor.jpg);
-}
-.project-netbots {
-	background-image: url(/projects/images/logo-netbots.png);
-}
-.project-hax {
-	background-image: url(/projects/images/logo-hax.jpg);
 }
