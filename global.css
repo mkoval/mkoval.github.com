@@ -120,3 +120,14 @@ div.figure span {
 	display:         block;
 	text-align:      center;
 }
+
+/* Blog */
+dt {
+	width:  128px;
+	height: 128px;
+	float:  left;
+}
+dd {
+	height: 128px;
+	margin: 0.5em 0;
+}

@@ -11,14 +11,14 @@ ul.projects li {
 	background-position: center left;
 }
 .project-igvc {
-	background-image: url(/projects/images/logo-igvc.jpg);
+	background-image: url(images/logo-igvc.jpg);
 }
 .project-quadrotor {
-	background-image: url(/projects/images/logo-quadrotor.jpg);
+	background-image: url(images/logo-quadrotor.jpg);
 }
 .project-netbots {
-	background-image: url(/projects/images/logo-netbots.png);
+	background-image: url(images/logo-netbots.png);
 }
 .project-hax {
-	background-image: url(/projects/images/logo-hax.jpg);
+	background-image: url(images/logo-hax.jpg);
 }
