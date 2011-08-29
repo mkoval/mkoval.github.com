@@ -76,8 +76,17 @@ div#header ul#nav li a {
 	border-bottom:   none;
 }
 
-div#header ul#nav li a:hover {
+div#header ul#nav li a.active,
+div#header ul#nav li a.active:active,
+div#header ul#nav li a.active:focus,
+div#header ul#nav li a.active:hover {
 	border-bottom:   0.3em solid #2E3A34;
+}
+
+div#header ul#nav li a:active,
+div#header ul#nav li a:focus,
+div#header ul#nav li a:hover {
+	border-bottom:   0.3em solid #BDD1C8;
 }
 
 /* Special Links */
