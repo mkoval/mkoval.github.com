@@ -80,6 +80,18 @@ div#header ul#nav li a:hover {
 	border-bottom:   0.3em solid #2E3A34;
 }
 
+/* Special Links */
+a.img, a.pdf, a.ppt {
+	font-weight: bold;
+	padding-right: 20px;
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+a.img { background-image: url(/images/icon-img.png); }
+a.pdf { background-image: url(/images/icon-pdf.gif); }
+a.ppt { background-image: url(/images/icon-ppt.png); }
+
 /* Content */
 div#content {
 	padding:         1em;
@@ -122,12 +134,25 @@ div.figure span {
 }
 
 /* Blog */
-dt {
-	width:  128px;
-	height: 128px;
-	float:  left;
+ul.apps {
+	margin:              0;
+	padding:             0;
+	list-style-type:     none;
 }
-dd {
-	height: 128px;
-	margin: 0.5em 0;
+ul.apps li {
+	min-height:          64px;
+	padding:             5px 5px 0 74px;
+	background-position: middle left;
+	background-repeat:   no-repeat;
 }
+ul.apps li a {
+	font-weight:         bold;
+}
+.app-adium       { background-image: url(/blog/images/icon-adium.png);       }
+.app-alfred      { background-image: url(/blog/images/icon-alfred.png);      }
+.app-btt         { background-image: url(/blog/images/icon-btt.png);         }
+.app-dropbox     { background-image: url(/blog/images/icon-dropbox.png);     }
+.app-caffeine    { background-image: url(/blog/images/icon-caffeine.png);    }
+.app-fantastical { background-image: url(/blog/images/icon-fantastical.png); }
+.app-gitx        { background-image: url(/blog/images/icon-gitx.png);        }
+.app-reeder      { background-image: url(/blog/images/icon-reeder.png);      }
