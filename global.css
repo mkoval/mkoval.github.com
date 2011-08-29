@@ -35,11 +35,15 @@ div#header {
 	background:      #2E3A34;
 }
 
-div#header h1 {
-	width:           700px;
+div#header div.container {
 	position:        absolute;
-	bottom:          -0.3em;
-	left:            0.50em;
+	bottom:          0;
+}
+
+div#header h1 {
+	position:        relative;
+	bottom:          -0.25em;
+	width:           700px;
 	padding:         0;
 	margin:          0;
 	color:           inherit;
@@ -54,7 +58,7 @@ div#header h1 a {
 div#header ul#nav {
 	position:        absolute;
 	bottom:          0.2em;
-	left:            28em;
+	right:           0;
 	margin:          0;
 	padding:         0;
 	cursor:          default;
@@ -90,15 +94,15 @@ div#header ul#nav li a:hover {
 }
 
 /* Special Links */
-a.img, a.pdf, a.ppt {
-	font-weight: bold;
+a.doc, a.img, a.pdf, a.ppt {
 	padding-right: 20px;
 	background-position: right;
 	background-repeat: no-repeat;
 }
 
+a.doc { background-image: url(/images/icon-doc.png); }
 a.img { background-image: url(/images/icon-img.png); }
-a.pdf { background-image: url(/images/icon-pdf.gif); }
+a.pdf { background-image: url(/images/icon-pdf.png); }
 a.ppt { background-image: url(/images/icon-ppt.png); }
 
 /* Content */
@@ -106,7 +110,8 @@ div#content {
 	padding:         1em;
 	background:      #FFF;
 }
-div#container {
+div.container {
+	position:        relative;
 	width:           700px;
 }
 
