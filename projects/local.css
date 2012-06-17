@@ -10,15 +10,9 @@ ul.projects li {
 	background-repeat:   no-repeat;
 	background-position: center left;
 }
-.project-igvc {
-	background-image: url(images/logo-igvc.jpg);
-}
-.project-quadrotor {
-	background-image: url(images/logo-quadrotor.jpg);
-}
-.project-netbots {
-	background-image: url(images/logo-netbots.png);
-}
-.project-hax {
-	background-image: url(images/logo-hax.jpg);
-}
+
+.project-igvc2012  { background-image: url(images/logo-igvc2012.jpg); }
+.project-igvc2011  { background-image: url(images/logo-igvc2011.jpg); }
+.project-quadrotor { background-image: url(images/logo-quadrotor.jpg); }
+.project-netbots   { background-image: url(images/logo-netbots.png); }
+.project-hax       { background-image: url(images/logo-hax.jpg); }
