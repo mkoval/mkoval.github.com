@@ -131,13 +131,12 @@ div#footer a {
 div.photos {
 	display:         table;
 	text-align:      center;
-	margin:          1em auto;
-	padding-right:   1em;
+	margin:          0.5em auto;
+	padding-right:   0.5em;
 }
 div.photos div.figure {
 	display:         table-cell;
-	width:           250px;
-	padding:         0 1em;
+	padding:         0 0.5em;
 }
 div.figure img {
 	border:          2px solid #2E3A34;
