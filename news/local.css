@@ -1,0 +1,16 @@
+dt {
+    float: left;
+    clear: left;
+    width: 6em;
+    font-weight: bold;
+    text-align: right;
+}
+
+dt:after {
+    content: ":";
+}
+
+dd {
+    padding: 0;
+    margin: 0 0 0.5em 6.5em;
+}
