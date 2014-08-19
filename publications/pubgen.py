@@ -7,6 +7,33 @@ from pybtex.plugin import find_plugin
 from pybtex.style import FormattedBibliography 
 from output import JekyllBackend
 from style import JekyllStyle
+from time import strptime
+
+def get_category(entry):
+    note = entry.fields.get('note', '')
+
+    if entry.type == 'article':
+        return 'Journal Papers', note
+    elif entry.type in [ 'inproceedings', 'conference' ]:
+        if note and note.istartswith('workshop'):
+            return 'Workshop Papers', note[9:].lstrip()
+        else:
+            return 'Conference Papers', note
+    elif entry.type == 'techreport':
+        return 'Technical Reports', note
+    else:
+        print('warning: Unknown type of entry "{:s}".'.format(entry.type),
+              file=sys.stderr)
+        return None, None
+
+def get_date_key(entry):
+    month_str = entry.fields.get('month', 'January')
+    month_index = strptime(month_str, '%B')
+
+    year_str = entry.fields.get('year', '0')
+    year_index = strptime(year_str, '%Y')
+
+    return (year_index, month_index)
 
 PROLOGUE = u"""\
 ---
@@ -20,11 +47,7 @@ EPILOGUE = u"""\
 generated from a <a href="mkoval.bib">BibTeX file</a> using <a
 href="http://pybtex.sourceforge.net/">Pybtex</a>.</div>
 """
-CATEGORIES = collections.OrderedDict([
-    ('Journal Papers', [ 'article' ]),
-    ('Conference Papers', [ 'inproceedings' ]),
-    ('Technical Reports', [ 'techreport' ]),
-])
+CATEGORIES = [ 'Journal Papers', 'Conference Papers', 'Workshop Papers', 'Technical Reports' ]
 
 arg_parser = argparse.ArgumentParser(description='Generates an HTML publication list from BibTeX.')
 arg_parser.add_argument('input_file')
@@ -40,8 +63,12 @@ backend = JekyllBackend()
 bib_parser = bibtex.Parser()
 bib_file = bib_parser.parse_file(args.input_file)
 entries = bib_file.entries.values()
+
+# Sort the entries by date.
+entries.sort(key=get_date_key, reverse=True)
 formatted_entries = list(style.format_entries(entries))
 
+# Group the entries by category.
 categorized_pubs = collections.defaultdict(list)
 for entry, formatted_entry in zip(entries, formatted_entries):
     # Add a link to the PDF if it's specified in the 'howpublished' field.
@@ -50,14 +77,18 @@ for entry, formatted_entry in zip(entries, formatted_entries):
         formatted_entry.text.append(pybtex.richtext.Text(' '))
         formatted_entry.text.append(pybtex.richtext.HRef(url, 'PDF'))
 
-    categorized_pubs[entry.type].append(formatted_entry)
+    category, note = get_category(entry)
+    entry.fields['note'] = note
+    categorized_pubs[category].append(formatted_entry)
 
 output_stream.write(PROLOGUE)
-for category_name, types in CATEGORIES.items():
-    merged_entries = reduce(lambda x, y: x + y, [ categorized_pubs[type] for type in types ], [])
 
-    if merged_entries:
-        output_stream.write('<h2>%s</h2>' % category_name)
-        category_bib = FormattedBibliography(merged_entries, style)
+for category_name in CATEGORIES:
+    category_entries = categorized_pubs[category_name]
+
+    if category_entries:
+        output_stream.write('<h2>{:s}</h2>'.format(category_name))
+        category_bib = FormattedBibliography(category_entries, style)
         backend.write_to_stream(category_bib, output_stream)
+
 output_stream.write(EPILOGUE)
