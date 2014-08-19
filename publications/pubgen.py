@@ -15,7 +15,7 @@ def get_category(entry):
     if entry.type == 'article':
         return 'Journal Papers', note
     elif entry.type in [ 'inproceedings', 'conference' ]:
-        if note and note.istartswith('workshop'):
+        if note and note.lower().startswith('workshop'):
             return 'Workshop Papers', note[9:].lstrip()
         else:
             return 'Conference Papers', note
