@@ -71,6 +71,7 @@ formatted_entries = list(style.format_entries(entries))
 # Group the entries by category.
 categorized_pubs = collections.defaultdict(list)
 for entry, formatted_entry in zip(entries, formatted_entries):
+
     # Add a link to the PDF if it's specified in the 'howpublished' field.
     if 'howpublished' in entry.fields:
         url = entry.fields['howpublished']
