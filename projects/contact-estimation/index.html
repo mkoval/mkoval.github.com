@@ -1,0 +1,57 @@
+---
+layout: default
+title: Bayesian State Estimation via Contact Sensing - Projects - Michael Koval
+category: projects
+---
+
+<h2>Bayesian State Estimation via Contact Sensing</h2>
+
+<p>We investigate the problem of using contact sensors to estimate the pose of
+an object during planar pushing by a fixed-shape hand. Contact sensors are
+unique because they inherently discriminate between “contact” and “no-contact”
+configurations. As a result, the set of object configurations that activates a
+sensor constitutes a lower-dimensional contact manifold in the configuration
+space of the object. This causes conventional state estimation methods, such as
+the particle filter, to perform poorly during periods of contact due to
+particle starvation.</p>
+
+<p>Our work introduces the manifold particle filter as a principled way of
+solving the state estimation problem when the state moves between multiple
+manifolds of different dimensionality. The manifold particle filter avoids
+particle starvation during contact by adaptively sampling particles that reside
+on the contact manifold from the dual proposal distribution. For
+low-dimensional problems, e.g. planar manipulation of a single movable object,
+we describe three techniques&mdash;one analytical and two
+sample-based&mdash;for constructing an explicit representation of the contact
+manifold that may be used to efficiently sample from the dual proposal
+distribution.</p>
+
+<p>Unfortunately, it is not tractable to construct an explicit representation
+of the contact manifold in high-dimensional problems, such as estimating the
+configuration of a manipulator in a known environment. In this case, we
+implicitly represent the contact manifold as the iso-contour of a loss function
+and use constraint projection to sample from dual proposal distribution.</p>
+
+<p>Our simulation results show that that the manifold particle filter
+outperforms the conventional particle filter in both speed and accuracy on
+applications: (1) estimating the pose of a movable object relative to the hand
+during planar pushing and (2) estimating the configuration of a manipulator in
+a known environment. We additionally demonstrate the approach in real-robot
+experiments using feedback from tactile sensors on the BarrettHand and the iHY
+end-effectors.</p>
+
+
+<h3>Publications</h3>
+<ul>
+  <li>Michael Koval, Nancy Pollard, and Siddhartha Srinivasa.
+  Pose estimation for planar contact manipulation with manifold particle filters.
+  <em>International Journal of Robotics Research</em>, 34(7):922&ndash;945, 2015. <a href="http://www.ri.cmu.edu/publication_view.html?pub_id=7952" class="pdf">PDF</a></li>
+  <li>Michael Koval, Nancy Pollard, and Siddhartha Srinivasa.
+  Manifold representations for state estimation in contact manipulation.
+  In <em>International Symposium of Robotics Research</em>. December 2013.
+  Invited paper. <a href="http://www.ri.cmu.edu/publication_view.html?pub_id=7510" class="pdf">PDF</a></li>
+  <li>Michael Koval, Mehmet Dogar, Nancy Pollard, and Siddhartha Srinivasa.
+  Pose estimation for contact manipulation with manifold particle filters.
+  In <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>. November 2013. <a href="http://www.ri.cmu.edu/publication_view.html?pub_id=7461" class="pdf">PDF</a></li>
+</ul>
+
