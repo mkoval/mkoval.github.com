@@ -1,0 +1,59 @@
+---
+layout: default
+title: Robust Closed-Loop Manipulation via Contact Sensing - Projects - Michael Koval
+category: projects
+---
+
+<h2>Robust Closed-Loop Manipulation via Contact Sensing</h2>
+
+<p>Humans effortlessly manipulate objects in cluttered and uncertain
+environments.  In contrast, most robotic manipulators are limited to carefully
+engineered environments, e.g. factories, to circumvent the difficulty of
+manipulation under uncertainty. Contact sensors can provide robots with with
+the feedback vital to addressing this limitation. However, there are three
+principal challenges to using contact sensing. First, contact is inherently
+discontinuous. Second, contact sensors only provide rich information while in
+contact. Third, planning for contact requires reasoning about the physics of
+interaction.</p>
+
+<p>Our work addresses these challenges by formulating contact manipulation as a
+<em>partially observable Markov decision process</em> (POMDP) in the joint
+space of robot configurations and object poses. Policies generated from this
+POMDP naturally take information-gathering actions when necessary to complete
+the task. For example, the robot may force an object into a contact sensor to
+localize it before attempting to push it into the goal region.</p>
+
+<p>We specifically consider the case of quasistatic planar manipulation. We
+exploit the structure of the problem to quickly find a near-optimal policy:</p>
+
+<ul>
+  <li><strong>Pre- and Post-Contact Policy Decomposition.</strong> We show that
+    the optimal policy naturally decouples into pre- and post-contact stages.
+    We present an algorithm that leverages this insight to reuse one
+    post-contact policy across multiple problem instances.</li>
+  <li><strong>Configuration Lattice.</strong> We perform an online search in a
+    lazily-constructed configuration space lattice to guarantee that all
+    actions the robot takes are feasible; e.g. do not exceed joint limits,
+    violate kinematic reachability constraints, or collide with obstacles.</li>
+  <li><strong>Heuristics.</strong> We guide an online search in full state
+    space with heuristics derived from relaxations of the problem. For example,
+    the optimal policy for an empty environment is a useful heuristic to follow
+    when manipulating objects in moderate amounts of clutter.</li>
+</ul>
+
+<p>We validate the effiacy of our approach in simulation and real-robot
+experiments on HERB, a manipulator with a 7-DOF Barrett WAM arm and the
+BarrettHand end-effector. We show that our approach successfully completes the
+task more often than baseline algorithms that do not take information-gathering
+actions.</p>
+
+
+<h3>Publications</h3>
+<ul>
+  <li>Michael Koval, Nancy Pollard, and Siddhartha Srinivasa.
+  Pre- and post-contact policy decomposition for planar contact manipulation under uncertainty.
+  <em>International Journal of Robotics Research</em>, 35(1-3):244&ndash;264, 2016. <a href="http://www.ri.cmu.edu/publication_view.html?pub_id=7998" class="pdf">PDF</a></li>
+  <li>Michael Koval, Nancy Pollard, and Siddhartha Srinivasa.
+  Pre- and post-contact policy decomposition for planar contact manipulation under uncertainty.
+  In <em>Robotics: Science and Systems</em>. July 2014. <a href="http://ri.cmu.edu/publication_view.html?pub_id=7599" class="pdf">PDF</a></li>
+</ul>
