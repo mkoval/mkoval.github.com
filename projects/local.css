@@ -11,8 +11,11 @@ ul.projects li {
 	background-position: center left;
 }
 
-.project-igvc2012  { background-image: url(images/logo-igvc2012.png); }
-.project-igvc2011  { background-image: url(images/logo-igvc2011.jpg); }
-.project-quadrotor { background-image: url(images/logo-quadrotor.jpg); }
-.project-netbots   { background-image: url(images/logo-netbots.png); }
-.project-hax       { background-image: url(images/logo-hax.jpg); }
+.project-igvc2012           { background-image: url(images/logo-igvc2012.png); }
+.project-igvc2011           { background-image: url(images/logo-igvc2011.jpg); }
+.project-quadrotor          { background-image: url(images/logo-quadrotor.jpg); }
+.project-netbots            { background-image: url(images/logo-netbots.png); }
+.project-hax                { background-image: url(images/logo-hax.jpg); }
+.project-contact-estimation { background-image: url(images/logo-contact-estimation.png); }
+.project-contact-planning   { background-image: url(images/logo-contact-planning.png); }
+.project-darpa-arm          { background-image: url(images/logo-darpa-arm.png); }
