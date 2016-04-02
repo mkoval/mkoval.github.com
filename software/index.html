@@ -24,48 +24,62 @@ category: software
 <ul class="projects">
   <li>
     <h3><a href="https://github.com/personalrobotics/prpy">
-      <code>prpy</code> - Python utilities used by the Personal Robotics Laboratory</a></h3>
-    <p>PrPy is a Python library used by the Personal Robotics Laboratory at
-    Carnegie Mellon University. This library includes robot-agnostic utilities
-    that make it easier to use OpenRAVE in Python scripts. This includes a
-    high-level planning pipeline, helper functions, and visualization
-    tools.</p>
+      <code>prpy</code> - Python utilities used by the Personal Robotics
+      Laboratory</a></h3>
+    <p>A robot-agnostic Python library used by the
+    <a href="https://www.personalrobotics.ri.cmu.edu/">
+      Personal Robotics Laboratory</a> at
+    <a href="http://www.cmu.edu/">Carnegie Mellon University</a> to simplify
+    using OpenRAVE in Python scripts. This includes a high-level planning
+    pipeline, helper functions, and visualization tools.</p>
   </li>
   <li>
     <h3><a href="https://github.com/personalrobotics/or_ompl">
       <code>or_ompl</code> - OpenRAVE bindings for OMPL</a></h3>
-    <p>OpenRAVE bindings for the OMPL suite of motion planning algorithms. This
-    package provides an OpenRAVE planning plugin that delegates planning
-    requests to an OMPL planner or path simplifier.</p>
+    <p>An OpenRAVE planner plugin that uses the
+    <a href="http://ompl.kavrakilab.org/">Open Motion Planning Library</a>
+    (OMPL) to solve geometric motion planning queries. It includes utilities
+    for constructing an OMPL state space from an OpenRAVE robot, checking state
+    validity using an OpenRAVE collision detector, and converting  between
+    OpenRAVE trajectories and OMPL paths.</p>
   </li>
   <li>
     <h3><a href="https://github.com/personalrobotics/or_fcl">
         <code>or_fcl</code> - OpenRAVE bindings for FCL</a></h3>
-    <p>OpenRAVE bindings for the Flexible Collision Library (FCL). This package
-    provides an OpenRAVE collision checking plugin that uses FCL to perform
-    collision checks. Benchmarks show that or_fcl is 2&ndash;7&times; faster
-    than the collision detectors included with OpenRAVE.</p>
+    <p>An OpenRAVE collision checking plugin that uses the 
+    <a href="https://github.com/flexible-collision-library/fcl">
+      Flexible Collision Library</a> (FCL) to perform collision checks.
+    Benchmarks show that this plugin is 2&ndash;7&times; faster at performing
+    binary checks than the ODE collision detection plugin included with
+    OpenRAVE.</p>
   </li>
   <li>
     <h3><a href="https://github.com/personalrobotics/or_rviz">
         <code>or_rviz</code> - OpenRAVE bindings for RViz</a></h3>
-    <p>OpenRAVE bindings for RViz. This package provides two OpenRAVE viewer
-    plugins that publish an OpenRAVE environment as interactive markers that
-    may be visualized in RViz.</p>
+    <p>An OpenRAVE viewer plugin that publishes the environment as
+    <a href="http://wiki.ros.org/interactive_markers">interactive markers</a>
+    for visualization in <a href="http://wiki.ros.org/rviz">RViz</a>. The
+    plugin supports both opening an RViz window in the same process as OpenRAVE
+    and, with reduced functionality, viewing the markers in an external
+    process.</p>
   </li>
   <li>
     <h3><a href="https://github.com/personalrobotics/or_urdf">
       <code>or_urdf</code> - OpenRAVE loader for URDF and SRDF files</a></h3>
-    <p>OpenRAVE plugin for loading a URDF and SRDF files into OpenRAVE.</p>
+    <p>An OpenRAVE plugin for loading
+      <a href="http://wiki.ros.org/urdf">URDF</a> and
+      <a href="http://wiki.ros.org/srdf">SRDF</a> files into OpenRAVE.</p>
   </li>
   <li>
     <h3><a href="https://github.com/personalrobotics/or_parabolicsmoother">
       <code>or_parabolicsmoother</code> - OpenRAVE plugin for smoothing trajectories</a></h3>
-    <p>OpenRAVE plugin for smoothing robot manipulator trajectories under
-    geometric constraints and bounded acceleration. This plugin is based on
-    code originally written by Kris Hauser and distributed with the paper "Fast
-    Smoothing of Manipulator Trajectories using Optimal Bounded-Acceleration
-    Shortcuts."</p>
+    <p>An OpenRAVE planner plugin for smoothing robot manipulator trajectories
+    under geometric constraints and bounded acceleration. This plugin is based
+    on <a href="http://motion.pratt.duke.edu/software.html">code originally
+      distributed with</a> the paper
+    "<a href="https://scholars.duke.edu/display/pub1043027">Fast Smoothing
+    of Manipulator Trajectories using Optimal Bounded-Acceleration
+    Shortcuts</a>" by K. Hauser and V. Ng-Thow-Hing.</p>
   </li>
 </ul>
 
@@ -75,40 +89,48 @@ category: software
   <li>
     <h3><a href="https://github.com/personalrobotics/stargazer">
       <code>stargazer</code> - Hagisonic Stargazer Driver</a></h3>
-    <p>ROS driver for the Hagisonic Stargazer. This package provides a Python
-    interface for communicating to the Stargazer over RS-232 and a ROS node
-    that publishes all detected markers as ROS messages.</p>
+    <p>A <a href="http://www.ros.org/">ROS</a> driver for the
+    <a href="http://www.robotshop.com/en/hagisonic-stargazer-localization-system.html">
+      Hagisonic Stargazer</a>. This package provides a Python interface for
+    communicating to the Stargazer over RS-232 and a ROS node that publishes
+    all detected markers as ROS messages.</p>
   </li>
   <li>
     <h3><a href="https://github.com/mkoval/FieldforceTCM">
       <code>fieldforce_tcm</code> - PNI Fieldforce TCM Digital Compass Driver</a></h3>
-    <p>ROS hardware driver for the PNI Fieldforce TCM digital compass.
-    <em>Warning:</em> This code is undocumented and has not been updated for Catkin.
+    <p>A <a href="http://www.ros.org/">ROS</a> hardware driver for the
+    <a href="http://dev.precisionnav.com/products/tcmmodules/">PNI Fieldforce
+      TCM</a> digital compass.
     </p>
   </li>
   <li>
     <h3><a href="https://github.com/mkoval/stereo_webcam">
       <code>stereo_webcam</code> - USB Webcam Driver for Stereo Vision</a></h3>
-    <p>ROS hardware driver that capture images from hardware-synchronized PS3
-    Eye cameras using direct Video4Linux system calls. This package is intended
-    to be used to convert two PS3 Eye cameras into an inexpensive stereo pair.
-    <em>Warning:</em> This code is undocumented and has not been updated for
-    Catkin.</p>
+    <p>A <a href="http://www.ros.org/">ROS</a> hardware driver that capture
+    images from hardware-synchronized
+    <a href="https://en.wikipedia.org/wiki/PlayStation_Eye">PlayStation Eye</a>
+    cameras using direct <a
+      href="https://en.wikipedia.org/wiki/Video4Linux">Video4Linux</a> system
+    calls. This package is intended to be used to convert two PlayStation Eye
+    cameras into an inexpensive stereo pair.</p>
   </li>
   <li>
     <h3><a href="https://github.com/mkoval/jaguar">
       <code>jaguar</code> - Jaguar Motor Control Driver</a></h3>
-    <p>ROS hardare driver for controlling the TI Jaguar motor controller. This
-    package communicates with one Jaguar over RS-232 and uses its built-in CAN
-    bus bridge to control additional daisy-chained hardware.
-    <em>Warning:</em> This code is undocumented and has not been updated for
-    Catkin.</p>
+    <p>A <a href="http://www.ros.org/">ROS</a> hardware driver for controlling
+    the <a href="http://www.vexrobotics.com/217-3367.html">TI MDL-BDC24
+    "Jaguar"</a> motor controller. This package communicates with one Jaguar
+    over RS-232 and uses its built-in CAN bus bridge to control additional
+    daisy-chained hardware.</p>
   </li>
   <li>
     <h3><a href="https://github.com/mkoval/hax">
       <code>hax</code> - Hardware Abstraction for Vex</a></h3>
     <p>Hardware Abstraction for VEX (HAX) is a C hardware abstraction layer for
-    the VEX Robotics PIC18 and ARM Cortex M3 micrcontrollers. HAX provides the
-    first open source development pipeline for VEX robotics.</p>
+    the <a href="http://www.vexrobotics.com/">VEX Robotics</a>
+    <a href="http://www.vexrobotics.com/276-2170.html">PIC-18</a> and
+    <a href="http://www.vexrobotics.com/276-2194.html">ARM Cortex M3</a>
+    micrcontrollers. HAX provides the first open source development pipeline
+    for VEX robotics.</p>
   </li>
 </ul>
