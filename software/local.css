@@ -1,0 +1,10 @@
+
+span.tag {
+  float: right;
+  color: #ffffff;
+  font-size: small;
+  font-weight: bold;
+  background-color: #999;
+  padding: 0.3ex 0.5em 0.3ex 0.5em;
+  border-radius: 0.5ex;
+}
