@@ -19,3 +19,8 @@ ul.projects li {
 .project-contact-estimation { background-image: url(images/logo-contact-estimation.png); }
 .project-contact-planning   { background-image: url(images/logo-contact-planning.png); }
 .project-darpa-arm          { background-image: url(images/logo-darpa-arm.png); }
+
+.project-herb               {
+  background-image: url(images/project-herb.jpg);
+  background-position: 15px center !important;
+}

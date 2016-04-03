@@ -1,0 +1,77 @@
+---
+layout: default
+title: Planning, Perception, and Control for a Personal Robot - Projects - Michael Koval
+category: projects
+---
+
+<h2>Planning, Perception, and Control for a Personal Robot</h2>
+<p><a href="http://www.cmu.edu/herb-robot/">HERB</a>, the Home Exploring Robot
+Butler, is a bimanual mobile manipulator designed and built by the <a
+href="https://www.personalrobotics.ri.cmu.edu/">Personal Robotics Lab</a> at <a
+href="http://www.cmu.edu/">Carnegie Mellon University</a> to complete household
+manipulation tasks. As a member of the Personal Robotics Lab, I developed many
+of the planning, perception, and control algorithms used by HERB to
+autonomously manipulate his environment.</p>
+
+<p>I am the lead developer of
+<a href="https://github.com/personalrobotics/herbpy">HerbPy</a> and
+<a href="https://github.com/personalrobotics/prpy">PrPy</a>, the core Python
+libraries that we use to control HERB. This software spans the spectrum of
+manipulation software, including:</p>
+
+<ul>
+  <li><strong>Motion Planning.</strong> HERB uses a repertoire of motion
+    planners. He begins by planning with fast heuristics and, if that fails,
+    falls back on more sophisticated algorithms. These algorithms include a
+    Jacobian-based controller, trajectory optimizers
+    (<a href="https://www.ri.cmu.edu/publication_view.html?pub_id=7421">CHOMP</a> and
+    <a href="http://rll.berkeley.edu/trajopt">Trajopt</a>), and
+    sample-based motion planners
+    (<a href="https://www.ri.cmu.edu/publication_view.html?pub_id=6309">CBiRRT</a> and
+    <a href="http://lemur-planning.readthedocs.org/">LEMUR</a>).</li>
+  <li><strong>Multi-Step Planning.</strong> HERB uses a
+    a simple backtracking search
+    (<a href="http://reports-archive.adm.cs.cmu.edu/anon/2015/abstracts/15-133.html">HGPC</a>)
+    to find geometrically feasible solutions to multi-step manipulation tasks.
+    This framework allows HERB to reason about dependencies between steps of
+    the task, e.g. choosing a poor position to place an object may make it
+    impossible to complete later step of the task.
+  </li>
+  <li><strong>Trajectory Post-Processing.</strong> Most geometric motion
+    planners return un-timed piecewise linear paths that require
+    post-processing before execution, e.g. shortcutting and timing. HERB
+    annotates all paths he plans with the meta-data necessary to post-process
+    them at at later time without violating geometric feasibility or path
+    constraints.
+  </li>
+  <li><strong>Perception.</strong> HERB uses the
+    properties of the object he is looking for to select one of several object
+    detection algorithms included in PrPy. This includes algorithms based on
+    feature matching
+    (<a href="http://www.karlpauwels.com/simtrack/">SimTrack</a>),
+    template matching (VNCC), and visual fiducials
+    (<a href="https://april.eecs.umich.edu/wiki/index.php/AprilTags">Apriltag</a>).
+    Objects that are not relevant to HERB's task are
+    represented by an octree (<a href="https://octomap.github.io/">OctoMap</a>) or 
+    a mesh (<a href="https://www.ri.cmu.edu/publication_view.html?pub_id=7924">Chisel</a>).
+  </li>
+</ul>
+
+<p>We have used this software to make HERB complete a variety of tasks,
+including: stocking a bookshelf, clearing a table,
+<a href="http://www.post-gazette.com/life/lifestyle/2014/05/21/HERB-a-play-with-a-human-actor-aims-to-develop-natural-movements-for-androids/stories/201405190147">starring in a play</a>,
+and completing a number of
+<a href="http://arxiv.org/abs/1502.03143">YCB tasks</a>.  Videos of HERB
+completing these tasks has been widely featured by the press, including
+<a href="http://movies.nationalgeographic.com/movies/robots/">National Geographic's
+<em>Robots</em> movie</a> shown in IMAX theaters,
+<a href="http://www.cmu.edu/homepage/computing/2013/winter/cookie-vs-creme-a-robotic-twist.shtml">an Oreo cookie advertisement</a>, and
+<a href="https://www.yahoo.com/katiecouric/pittsburgh-innovation-in-the-steel-city-204408302.html">an episode</a> of Katie Couric's <em>Cities Rising: Rebuilding America</em> series.</p>
+
+<h3>Videos</h3>
+<p style="text-align:center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/hoO9brudboY" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Rh-xRIgcfUM" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pELAnSbeY-0" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Bq5sblkoflM" frameborder="0" allowfullscreen></iframe>
+</p>
