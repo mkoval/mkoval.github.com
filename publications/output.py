@@ -33,6 +33,7 @@ class JekyllBackend(BaseBackend):
         'nbsp': u'&nbsp;'
     }
     tags = {
+         'em': u'em',
          'emph': u'em',
     }
     

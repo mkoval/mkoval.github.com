@@ -139,6 +139,7 @@ class JekyllStyle(BaseStyle):
 
         def protected_capitalize(x):
             """Capitalize string, but protect {...} parts."""
+
             result = ""
             level = 0
             for pos, c in enumerate(x):

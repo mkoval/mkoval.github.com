@@ -45,7 +45,7 @@ category: publications
 EPILOGUE = u"""\
 <div style="font-style:italic;font-size:0.8em;text-align:center;">This page is automatically
 generated from a <a href="mkoval.bib">BibTeX file</a> using <a
-href="http://pybtex.sourceforge.net/">Pybtex</a>.</div>
+href="http://pybtex.sourceforge.net/">Pybtex</a> version 0.18.</div>
 """
 CATEGORIES = [ 'Journal Papers', 'Conference Papers', 'Workshop Papers', 'Technical Reports' ]
 
