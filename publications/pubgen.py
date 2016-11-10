@@ -21,6 +21,8 @@ def get_category(entry):
             return 'Conference Papers', note
     elif entry.type == 'techreport':
         return 'Technical Reports', note
+    elif entry.type == 'phdthesis':
+        return 'Theses', note
     else:
         print('warning: Unknown type of entry "{:s}".'.format(entry.type),
               file=sys.stderr)
@@ -47,7 +49,7 @@ EPILOGUE = u"""\
 generated from a <a href="mkoval.bib">BibTeX file</a> using <a
 href="http://pybtex.sourceforge.net/">Pybtex</a> version 0.18.</div>
 """
-CATEGORIES = [ 'Journal Papers', 'Conference Papers', 'Workshop Papers', 'Technical Reports' ]
+CATEGORIES = [ 'Journal Papers', 'Conference Papers', 'Workshop Papers', 'Theses', 'Technical Reports' ]
 
 arg_parser = argparse.ArgumentParser(description='Generates an HTML publication list from BibTeX.')
 arg_parser.add_argument('input_file')
