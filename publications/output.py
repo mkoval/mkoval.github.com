@@ -46,7 +46,14 @@ class JekyllBackend(BaseBackend):
     
     def format_href(self, url, text):
         if text == 'PDF':
-            return ur'<a href="%s" class="pdf">%s</a>' % (url, text)
+            class_name = 'pdf'
+        elif text.startswith('doi:'):
+            class_name = 'doi'
+        else:
+            class_name = None
+
+        if class_name is not None:
+            return ur'<a href="%s" class="%s">%s</a>' % (url, class_name, text)
         else:
             return ur'<a href="%s">%s</a>' % (url, text)
 

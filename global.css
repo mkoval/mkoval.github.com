@@ -105,6 +105,10 @@ a.img { background-image: url(/images/icon-img.png); }
 a.pdf { background-image: url(/images/icon-pdf.png); }
 a.ppt { background-image: url(/images/icon-ppt.png); }
 
+a.doi {
+  font-size:       0.8em;
+}
+
 /* Content */
 div#content {
 	padding:         1em;
