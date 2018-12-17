@@ -46,6 +46,18 @@ class JekyllStyle(BaseStyle):
         else:
             return formatted_names
 
+    def format_patent(self, e):
+        template = toplevel [
+            self.format_title(e, 'title'),
+            sentence(capfirst=False) [ date, ],
+            href [
+                field('howpublished'),
+                sentence(capfirst=False) [ field('note') ],
+            ],
+            self.format_web_refs(e),
+        ]
+        return template.format_data(e)
+        
     def format_article(self, e):
         volume_and_pages = first_of [
             # volume and pages, with optional issue number
@@ -140,7 +152,7 @@ class JekyllStyle(BaseStyle):
         def protected_capitalize(x):
             """Capitalize string, but protect {...} parts."""
 
-            result = ""
+            result = Text()
             level = 0
             for pos, c in enumerate(x):
                 if c == '{':
